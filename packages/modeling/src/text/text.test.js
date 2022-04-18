@@ -1,6 +1,6 @@
 const test = require('ava')
 
-const { vectorChar, vectorText } = require('./index')
+const { vectorChar, vectorText, text } = require('./index')
 
 const questionMarkSegments = [ // '?'
   [[3, 16], [3, 17], [4, 19], [5, 20], [7, 21], [11, 21], [13, 20], [14, 19], [15, 17], [15, 15], [14, 13], [13, 12], [9, 10], [9, 7]],
@@ -184,4 +184,39 @@ test('vectorText ({ align: right }, text)', (t) => {
   ]
 
   t.deepEqual(obs, expSegments)
+})
+
+test('text (text)', (t) => {
+  const paths = text('OpenJSCAD')
+  t.pass() // I still have to learn avajs
+})
+
+test('text (multi-line-text)', (t) => {
+  const paths = text('Open\nJSCAD')
+  t.pass() // I still have to learn avajs
+})
+
+test('text ({ yOffset }, text)', (t) => {
+  const paths = text({ yOffset: 20 }, 'y20')
+  t.pass() // I still have to learn avajs
+})
+
+test('text ({ xOffset, input, letterSpacing })', (t) => {
+  const paths = text({ xOffset: -10, input: 'space', letterSpacing: 1.5 })
+  t.pass() // I still have to learn avajs
+})
+
+test('text ({ height, extrudeOffset }, text)', (t) => {
+  const paths = text({ height: 12, extrudeOffset: 2 }, 'size')
+  t.pass() // I still have to learn avajs
+})
+
+test('text ({ align: center }, text)', (t) => {
+  const paths = text({ align: 'center' }, 'a\nab\nabc')
+  t.pass() // I still have to learn avajs
+})
+
+test('text ({ align: right }, text)', (t) => {
+  const paths = text({ align: 'right' }, 'a\na b\na b c')
+  t.pass() // I still have to learn avajs
 })
