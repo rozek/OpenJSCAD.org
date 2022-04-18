@@ -1,4 +1,5 @@
 const vectorText = require('./vectorText')
+const path2 = require('../geometries/path2')
 
 /**
  * Construct an array of 2D paths from an ascii string whose character's code is between 31 and 127,
